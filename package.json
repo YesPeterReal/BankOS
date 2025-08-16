@@ -6,5 +6,6 @@
     "apps/*",
     "packages/*",
     "services/*"
-  ]
+  ],
+  "nohoist": ["prisma", "@prisma/**"]
 }
