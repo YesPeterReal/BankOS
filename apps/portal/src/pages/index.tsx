@@ -1,5 +1,6 @@
 import { AccountTile } from '@bankos/ui';
 import type { NextPage } from 'next';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
@@ -10,6 +11,9 @@ const Home: NextPage = () => {
       <main className="flex flex-col gap-6">
         <AccountTile name="Checking Account" balance={1000} />
         <AccountTile name="Savings Account" balance={2500} />
+        <Link href="/plugins" className="text-green-400 hover:text-green-300 underline mt-4">
+          Visit Plugin Marketplace
+        </Link>
       </main>
       <footer className="mt-8 text-center text-gray-400">
         <p>&copy; 2025 BankOS. All rights reserved.</p>
