@@ -1,11 +1,12 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { PrismaService } from './prisma.service';
 import { TransactionService } from './transaction.service';
+import { AIService } from './ai.service';
 import { Prisma } from '@prisma/client';
 
 @Controller()
 export class AppController {
-  constructor(private prisma: PrismaService, private transactionService: TransactionService) {}
+  constructor(private prisma: PrismaService, private transactionService: TransactionService, private aiService: AIService) {}
 
   @Get()
   async getHello() {
@@ -17,5 +18,11 @@ export class AppController {
   async createTransaction(@Body() data: Prisma.TransactionCreateInput) {
     const transaction = await this.transactionService.createTransaction(data);
     return transaction;
+  }
+
+  @Get('suggestions/:accountId')
+  async getSuggestions(@Param('accountId') accountId: string) {
+    const suggestions = await this.aiService.getSuggestions(accountId);
+    return suggestions;
   }
 }

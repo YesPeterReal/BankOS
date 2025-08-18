@@ -11,4 +11,8 @@ export class TransactionService {
       data,
     });
   }
+
+  async findMany(args: Prisma.TransactionFindManyArgs) {
+    return this.prisma.transaction.findMany(args);
+  }
 }
