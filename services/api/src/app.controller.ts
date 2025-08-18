@@ -6,7 +6,11 @@ import { Prisma } from '@prisma/client';
 
 @Controller()
 export class AppController {
-  constructor(private prisma: PrismaService, private transactionService: TransactionService, private aiService: AIService) {}
+  constructor(
+    private prisma: PrismaService,
+    private transactionService: TransactionService,
+    private aiService: AIService,
+  ) {}
 
   @Get()
   async getHello() {
