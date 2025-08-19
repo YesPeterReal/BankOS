@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="page-wrapper">
       <header>
         <h1>BankOS Portal</h1>
       </header>

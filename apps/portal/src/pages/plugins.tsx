@@ -7,21 +7,21 @@ const Plugins: NextPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-deep-navy text-pure-white font-inter flex flex-col">
-      <header className="p-6">
-        <h1 className="text-3xl font-spaceGrotesk text-bankos-cyan antialiased">Plugin Marketplace</h1>
+    <div className="page-wrapper">
+      <header>
+        <h1>Plugin Marketplace</h1>
       </header>
-      <main className="flex-grow p-6">
-        <div className="grid gap-4">
+      <main>
+        <div>
           {plugins.map((plugin, index) => (
-            <div key={index} className="p-4 bg-indigo-accent rounded-lg">
-              <h2 className="text-xl font-spaceGrotesk text-bankos-cyan antialiased">{plugin.name}</h2>
-              <p className="text-cool-gray antialiased">{plugin.description}</p>
+            <div key={index} className="plugin-card">
+              <h2>{plugin.name}</h2>
+              <p>{plugin.description}</p>
             </div>
           ))}
         </div>
       </main>
-      <footer className="p-6 text-center text-cool-gray antialiased">
+      <footer>
         <p>&copy; 2025 BankOS</p>
       </footer>
     </div>
