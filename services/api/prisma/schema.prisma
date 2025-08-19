@@ -18,3 +18,11 @@ model Transaction {
   rawData   Json?
   createdAt DateTime @default(now())
 }
+model Plugin {
+  id        String   @id @default(uuid())
+  name      String
+  description String
+  version   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

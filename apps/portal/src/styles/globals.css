@@ -1,16 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap');
 
+:root {
+  --color-bg-dark: #0D1117;
+  --color-bg-light: #FFFFFF;
+  --color-primary: #4F46E5;
+  --color-accent: #06B6D4;
+  --color-text-dark: #F9FAFB;
+  --color-text-light: #111827;
+  --color-success: #22C55E;
+  --color-danger: #EF4444;
+}
+
+/* Default to dark theme unless overridden */
+html {
+  data-theme: "dark";
+}
+
+[data-theme="dark"] {
+  --background: var(--color-bg-dark);
+  --text: var(--color-text-dark);
+}
+
+[data-theme="light"] {
+  --background: var(--color-bg-light);
+  --text: var(--color-text-light);
+}
+
 html, body {
   height: 100%;
   margin: 0;
 }
 body {
-  background-color: #0B1124;
-  color: #FFFFFF;
+  background: var(--background, #0D1117); /* Fallback to dark if var fails */
+  color: var(--text, #F9FAFB); /* Fallback to dark text */
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 #__next {
   min-height: 100vh;
@@ -23,7 +51,7 @@ body {
   min-height: 100vh;
 }
 h1 {
-  color: #00E6D1;
+  color: var(--color-accent);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.875rem; /* 30px */
   font-weight: 600;
@@ -33,6 +61,7 @@ h1 {
   color: #AAB2C8;
   padding: 1rem;
   border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 footer {
   color: #AAB2C8;
@@ -45,8 +74,21 @@ main {
   padding: 1rem;
 }
 a {
-  color: #5BC0BE;
+  color: var(--color-primary);
+  text-decoration: none;
 }
 a:hover {
-  color: #00C853;
+  color: var(--color-success);
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  background: #1F2937;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
