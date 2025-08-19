@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BankOS Dashboard</title>
+   <link rel="stylesheet" href="bankos.css">
+</head>
+<body>
+   <!-- Sidebar -->
+   <aside class="sidebar">
+    <div class="logo">BankOS</div>
+    <nav>
+      <a href="#" class="active">Dashboard</a>
+      <a href="#">Accounts</a>
+      <a href="#">Payments</a>
+      <a href="#">Marketplace</a>
+      <a href="#">Settings</a>
+    </nav>
+    </aside>
+
+    <!-- Main App -->
+<main class="app">
+<!-- Topbar -->
+<header class="topbar">
+<h1>Customer Dashboard</h1>
+<div class="user">
+<span class="user-name">Hi, Peter</span>
+<img src="https://via.placeholder.com/40" alt="user" class="avatar">
+</div>
+</header>
+
+<!-- Dashboard Content -->
+<section class="dashboard">
+<!-- Balance Summary -->
+<div class="card balance">
+<h2>Balance</h2>
+<p class="amount">$12,450.00</p>
+<span class="trend up">+8.4% this month</span>
+</div>
+
+<!-- AI Insight Cards -->
+<div class="ai-card">
+<h3>AI Suggestion</h3>
+<p>Consider moving $500 to savings to hit your goal 2 weeks early.</p>
+</div>
+
+<div class="ai-card">
+<h3>AI Alert</h3>
+<p>Unusual spending detected on your debit card yesterday.</p>
+</div>
+
+<!-- Goals Tracker -->
+<div class="card goals">
+<h2>Savings Goal</h2>
+<div class="progress-ring"></div>
+<p>75% complete</p>
+</div>
+
+<!-- Admin KPI Cards -->
+<div class="card kpi">
+<h3>Total Users</h3>
+<p>24,580</p>
+</div>
+<div class="card kpi">
+<h3>Transactions</h3>
+<p>1.2M</p>
+</div>
+<div class="card kpi risk">
+<h3>Risk Level</h3>
+<p>Moderate</p>
+</div>
+</section>
+</main>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav">
+<a href="#">🏠</a>
+<a href="#">💳</a>
+<a href="#">📊</a>
+<a href="#">⚙️</a>
+</nav>
+
+<!-- Optional JS for theme toggle -->
+<script>
+function toggleTheme() {
+const body = document.documentElement;
+body.dataset.theme = body.dataset.theme === "dark" ? "light" : "dark";
+}
+</script>
+</body>
+</html>
