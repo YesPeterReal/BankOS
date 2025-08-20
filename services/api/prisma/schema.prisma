@@ -10,19 +10,20 @@ datasource db {
 model Transaction {
   id        String   @id @default(uuid())
   accountId String
-  amount    Decimal  @db.Decimal(14,2)
+  amount    Decimal  @db.Decimal(14, 2)
   currency  String   @db.VarChar(3)
   merchant  String?
   category  String?
-  timestamp DateTime @db.Timestamptz
+  timestamp DateTime @db.Timestamptz(6)
   rawData   Json?
   createdAt DateTime @default(now())
 }
+
 model Plugin {
-  id        String   @id @default(uuid())
-  name      String
+  id          String   @id @default(uuid())
+  name        String
   description String
-  version   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  version     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

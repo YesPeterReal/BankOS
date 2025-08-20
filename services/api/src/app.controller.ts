@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { PrismaService } from './prisma.service';
 import { TransactionService } from './transaction.service';
 import { AIService } from './ai.service';
+import { PluginService } from './plugin.service';
 import { Prisma } from '@prisma/client';
 
 @Controller()
@@ -10,6 +11,7 @@ export class AppController {
     private prisma: PrismaService,
     private transactionService: TransactionService,
     private aiService: AIService,
+    private pluginService: PluginService,
   ) {}
 
   @Get()
@@ -28,5 +30,15 @@ export class AppController {
   async getSuggestions(@Param('accountId') accountId: string) {
     const suggestions = await this.aiService.getSuggestions(accountId);
     return suggestions;
+  }
+
+  @Get('plugins')
+  async getPlugins() {
+    return this.pluginService.findAll();
+  }
+
+  @Post('plugins')
+  async createPlugin(@Body() data: { name: string; description: string; version: string }) {
+    return this.pluginService.create(data);
   }
 }

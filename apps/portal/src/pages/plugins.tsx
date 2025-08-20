@@ -1,36 +1,35 @@
-import type { NextPage } from 'next'; // Imports Next.js page type
-import { useEffect, useState } from 'react'; // Hooks for state and side effects
+import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
 
 const Plugins: NextPage = () => {
-  const [plugins, setPlugins] = useState<{ name: string; description: string }[]>([]); // State to hold plugin data
+  const [plugins, setPlugins] = useState<{ name: string; description: string }[]>([]);
 
   useEffect(() => {
-    // Fetch plugins from the API when the component mounts
-    fetch('http://localhost:3000/plugins')
-      .then((res) => res.json()) // Parse JSON response
-      .then((data) => setPlugins(data)); // Update state with fetched data
-  }, []); // Empty dependency array ensures it runs once on mount
+    fetch('http://localhost:3000/plugins') // API is on 3000
+      .then((res) => res.json())
+      .then((data) => setPlugins(data));
+  }, []);
 
   return (
-    <div className="page-wrapper"> {/* Wrapper for full-height flex layout */}
-      <header> {/* Header section */}
-        <h1>Plugin Marketplace</h1> {/* Title with BankOS accent color */}
+    <div className="page-wrapper">
+      <header>
+        <h1>Plugin Marketplace</h1>
       </header>
-      <main> {/* Main content area */}
-        <div className="dashboard"> {/* Grid layout for cards */}
+      <main>
+        <div className="dashboard">
           {plugins.map((plugin, index) => (
-            <div key={index} className="card plugin-card"> {/* Styled card for each plugin */}
-              <h2>{plugin.name}</h2> {/* Plugin name */}
-              <p>{plugin.description}</p> {/* Plugin description */}
+            <div key={index} className="card plugin-card">
+              <h2>{plugin.name}</h2>
+              <p>{plugin.description}</p>
             </div>
           ))}
         </div>
       </main>
-      <footer> {/* Footer with alignment */}
-        <p>&copy; 2025 BankOS all right reserved</p>
+      <footer>
+        <p>&copy; 2025 BankOS</p>
       </footer>
     </div>
   );
 };
 
-export default Plugins; // Export the page component
+export default Plugins;
