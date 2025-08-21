@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/peter/bankos/apps/portal/pages/index.tsx"],"sourcesContent":["import Link from 'next/link';\r\n\r\nexport default function Home() {\r\n  return (\r\n    <div className=\"page-wrapper\">\r\n      <header>\r\n        <h1>Welcome to BankOS</h1>\r\n      </header>\r\n      <main>\r\n        <p>Explore our plugins!</p>\r\n        <Link href=\"/plugins\">Go to Plugin Marketplace</Link>\r\n      </main>\r\n      <footer>\r\n        <p>&copy; 2025 BankOS</p>\r\n      </footer>\r\n    </div>\r\n  );\r\n}"],"names":[],"mappings":";;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,qKAAC;QAAI,WAAU;;0BACb,qKAAC;0BACC,cAAA,qKAAC;8BAAG;;;;;;;;;;;0BAEN,qKAAC;;kCACC,qKAAC;kCAAE;;;;;;kCACH,qKAAC,qHAAA,CAAA,UAAI;wBAAC,MAAK;kCAAW;;;;;;;;;;;;0BAExB,qKAAC;0BACC,cAAA,qKAAC;8BAAE;;;;;;;;;;;;;;;;;AAIX","debugId":null}}]
+}

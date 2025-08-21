@@ -1,0 +1,100 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap";
+/* [project]/apps/portal/src/styles/globals.css [client] (css) */
+:root {
+  --color-bg-dark: #0d1117;
+  --color-bg-light: #fff;
+  --color-primary: #4f46e5;
+  --color-accent: #06b6d4;
+  --color-text-dark: #f9fafb;
+  --color-text-light: #111827;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+}
+
+html {
+  data-theme: "dark";
+}
+
+[data-theme="dark"] {
+  --background: var(--color-bg-dark);
+  --text: var(--color-text-dark);
+}
+
+[data-theme="light"] {
+  --background: var(--color-bg-light);
+  --text: var(--color-text-light);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--background, #0d1117);
+  color: var(--text, #f9fafb);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  flex-direction: column;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  display: flex;
+}
+
+#__next, .page-wrapper {
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+}
+
+h1 {
+  color: var(--color-accent);
+  font-family: Space Grotesk, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.plugin-card {
+  color: #aab2c8;
+  background-color: #1c2541;
+  border-radius: .5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+}
+
+footer {
+  color: #aab2c8;
+  text-align: center;
+  flex-shrink: 0;
+  padding: 1rem;
+}
+
+main {
+  flex: 1 0 auto;
+  padding: 1rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-success);
+}
+
+.dashboard {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  display: grid;
+}
+
+.card {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+}
+
+/*# sourceMappingURL=apps_portal_src_styles_globals_f7c683a8.css.map*/
