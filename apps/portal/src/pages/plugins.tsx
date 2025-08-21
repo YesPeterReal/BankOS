@@ -5,9 +5,13 @@ const Plugins: NextPage = () => {
   const [plugins, setPlugins] = useState<{ name: string; description: string }[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/plugins') // API is on 3000
-      .then((res) => res.json())
-      .then((data) => setPlugins(data));
+    fetch('http://[::1]:3000/plugins', { credentials: 'same-origin' })
+      .then((res) => {
+        if (!res.ok) throw new Error('Network response was not ok ' + res.status);
+        return res.json();
+      })
+      .then((data) => setPlugins(data))
+      .catch((error) => console.error('Fetch error:', error));
   }, []);
 
   return (
